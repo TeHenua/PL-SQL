@@ -1,0 +1,26 @@
+--EJ1--
+
+SET SERVEROUTPUT ON;
+
+BEGIN 
+  DBMS_OUTPUT.PUT_LINE('HOLA MUNDO');
+END;
+
+DECLARE
+  nombre VARCHAR2(10) :='USUE';
+BEGIN
+  DBMS_OUTPUT.PUT_LINE('HOLA '||nombre);
+END;
+
+--EJ2--
+DECLARE
+  V_MAX_ID NUMBER; 
+BEGIN
+  SELECT MAX(ID) INTO V_MAX_ID FROM CENTROS;
+  IF V_MAX_ID IS NULL
+  THEN
+    DBMS_OUTPUT.PUT_LINE('No existe ningún valor');
+  ELSE  
+    DBMS_OUTPUT.PUT_LINE('El ultimo identificador de centro es: '||V_MAX_ID);
+  END IF;  
+END;
